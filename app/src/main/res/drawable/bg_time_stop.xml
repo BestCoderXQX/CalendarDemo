@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--结束日期的背景-->
+    <corners android:bottomRightRadius="20dp"
+        android:topRightRadius="20dp"
+        ></corners>
+    <solid android:color="#4ab7e8"></solid>
+</shape>

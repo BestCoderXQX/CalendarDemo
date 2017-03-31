@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--开始日期和结束日期同一天的背景-->
+    <corners android:radius="20dp"
+        ></corners>
+    <solid android:color="#4ab7e8"></solid>
+</shape>
