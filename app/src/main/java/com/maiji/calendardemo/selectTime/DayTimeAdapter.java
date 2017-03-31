@@ -146,41 +146,55 @@ public class DayTimeAdapter extends RecyclerView.Adapter<DayTimeViewHolder>{
                 && MonthTimeActivity.stopDay.getYear()== dayTimeEntity.getYear() && MonthTimeActivity.stopDay.getMonth() == dayTimeEntity.getMonth() && MonthTimeActivity.stopDay.getDay() == dayTimeEntity.getDay() ){
             //开始和结束同一天
             holder.select_ly_day.setBackgroundResource(R.drawable.bg_time_startstop);
-
+            holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
         }
         else if (MonthTimeActivity.startDay.getYear()== dayTimeEntity.getYear() && MonthTimeActivity.startDay.getMonth() == dayTimeEntity.getMonth() && MonthTimeActivity.startDay.getDay() == dayTimeEntity.getDay()){
             //该item是 开始日期
             holder.select_ly_day.setBackgroundResource(R.drawable.bg_time_start);
+            holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
         }else if(MonthTimeActivity.stopDay.getYear()== dayTimeEntity.getYear() && MonthTimeActivity.stopDay.getMonth() == dayTimeEntity.getMonth() && MonthTimeActivity.stopDay.getDay() == dayTimeEntity.getDay()){
             //该item是 结束日期
             holder.select_ly_day.setBackgroundResource(R.drawable.bg_time_stop);
+            holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
         }else if(dayTimeEntity.getMonthPosition()>= MonthTimeActivity.startDay.getMonthPosition() && dayTimeEntity.getMonthPosition()<= MonthTimeActivity.stopDay.getMonthPosition()){
             //处于开始和结束之间的点
             if (dayTimeEntity.getMonthPosition()== MonthTimeActivity.startDay.getMonthPosition()&& dayTimeEntity.getMonthPosition()== MonthTimeActivity.stopDay.getMonthPosition()){
                 //开始和结束是一个月份
                 if (dayTimeEntity.getDay()> MonthTimeActivity.startDay.getDay() && dayTimeEntity.getDay() < MonthTimeActivity.stopDay.getDay()) {
                     holder.select_ly_day.setBackgroundResource(R.color.blue);
+                    holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
                 }else{
                     holder.select_ly_day.setBackgroundResource(R.color.white);
+                    holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.txtColor));
                 }
             }else if(MonthTimeActivity.startDay.getMonthPosition() != MonthTimeActivity.stopDay.getMonthPosition()){
                 // 日期和 开始 不是一个月份
                 if (dayTimeEntity.getMonthPosition()== MonthTimeActivity.startDay.getMonthPosition() && dayTimeEntity.getDay()> MonthTimeActivity.startDay.getDay()){
                     //和初始相同月  天数往后
                     holder.select_ly_day.setBackgroundResource(R.color.blue);
+                    holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
                 }else if(dayTimeEntity.getMonthPosition()== MonthTimeActivity.stopDay.getMonthPosition() && dayTimeEntity.getDay()< MonthTimeActivity.stopDay.getDay()){
                     //和结束相同月   天数往前
-                    holder.select_ly_day.setBackgroundResource(R.color.blue);
+                    if (dayTimeEntity.getDay()<=0){
+                        holder.select_ly_day.setBackgroundResource(R.color.white);
+                        holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.txtColor));
+                    }else {
+                        holder.select_ly_day.setBackgroundResource(R.color.blue);
+                        holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
+                    }
                 }else if(dayTimeEntity.getMonthPosition()!= MonthTimeActivity.startDay.getMonthPosition() && dayTimeEntity.getMonthPosition()!= MonthTimeActivity.stopDay.getMonthPosition()){
                     //和 开始结束都不是同一个月
                     holder.select_ly_day.setBackgroundResource(R.color.blue);
+                    holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.white));
                 }else{
                     holder.select_ly_day.setBackgroundResource(R.color.white);
+                    holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.txtColor));
                 }
             }
 
         }else{
             holder.select_ly_day.setBackgroundResource(R.color.white);
+            holder.select_txt_day.setTextColor(context.getResources().getColor(R.color.txtColor));
         }
 
     }

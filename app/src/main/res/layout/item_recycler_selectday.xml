@@ -17,6 +17,7 @@
         android:text=""
         android:layout_gravity="center"
         android:gravity="center"
+        android:textColor="@color/txtColor"
         />
 
 </LinearLayout>

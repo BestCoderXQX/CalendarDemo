@@ -8,5 +8,5 @@
     <color name="white">#fff</color>
 
     <color name="blue">#4ab7e8</color>
-
+    <color name="txtColor">#333333</color>
 </resources>
